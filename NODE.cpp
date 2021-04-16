@@ -1,22 +1,25 @@
 #include <iostream>
 using namespace std;
 #include"NODE.h"
+#include<string>
 
-NODE::NODE(int x){
-      data=x;
+monster_node::monster_node(int x,int y,string n){
+      hp=x;
+      potion=y;
+      name=n;
       next=NULL;
-      cout<<"adding "<< x<<endl;
+      cout<<"adding monster "<< n<< "hp"<< x<< "potion"<< y<<endl;
 }
-  NODE:: ~NODE(){
-      cout<<"Node "<<data<<" is being deleted"<<endl;
+  monster_node:: ~monster_node(){
+      cout<<"Node "<<name<<" is being deleted"<<endl;
 }
-NODE* NODE::move_next(){
+monster_node* monster_node::move_next(){
       return next;
 }
-void  NODE:: show_node(){
-         cout<<"Node data:"<<data<<endl;
+void  monster_node:: show_node(){
+         cout<<"monster "<<name<<"hp:"<<hp<<endl;
  }
-void NODE::insert(NODE*& x){
+void monster_node::insert(monster_node*& x){
      x->next=this;
 
      }

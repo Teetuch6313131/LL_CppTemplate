@@ -2,6 +2,7 @@
 #include"NODE.h"
 #include"LL.h"
 using namespace std;
+#include <string>
 LL::LL(){
        hol=NULL;
        size=0;
@@ -11,16 +12,11 @@ LL::~LL(){
    // there is at least one item
     if(hol != NULL)
     {   
-        // release memory starting from the second item
-        NODE *current, *soon;
-        current = this->hol->move_next();
-        while(current != 0)  // if there are at least two items
+        monster_node *current, *soon;
+        current = hol->move_next();
+        while(current != 0)  
         {
-            /* When there is no more items after current,
-             * delete current and leave.
-             * Otherwise, free up current and move on to
-             * the next item.
-             */
+            
             if(current->move_next() != NULL)
             {
                 soon = current->move_next();
@@ -36,19 +32,20 @@ LL::~LL(){
         }
     }
 
-    delete this->hol;
+    delete hol;
           //clear all nodes
+
 }
 
 void LL::show_all(){
-     NODE* t=hol;
+     monster_node* t=hol;
      int i;
      for(i=0;i<size;i++){
              t->show_node();
              t=t->move_next();
      }
 }
-void LL::add_node(NODE *&A){
+void LL::add_node(monster_node *&A){
 
           hol->insert(A);
           hol=A;

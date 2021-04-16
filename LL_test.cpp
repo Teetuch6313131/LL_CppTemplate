@@ -6,12 +6,12 @@ using namespace std;
 int main(int argc, char *argv[])
 {  LL A;
    int i;
-   NODE *t;
+   monster_node *t;
 
    for(i=1;i<argc;i++) {
-                       t=new NODE(atoi(argv[i]));
-                       A.add_node(t);
-                       }
+    t=new monster_node(atoi(argv[i]),atoi(argv[i+1]),argv[i+2]);
+    A.add_node(t);
+    }
    A.show_all();
     //system("PAUSE");
     return 0;

@@ -1,10 +1,12 @@
-class NODE{
-      int data;
-      NODE* next;
+#include <string>
+class monster_node{
+      int hp,potion;
+      string name;
+      monster_node* next;
 public:
-        NODE(int);
+        monster_node(int,int,string);
         void show_node();
-        void insert(NODE*&);
-        NODE* move_next();
-        ~NODE();
+        void insert(monster_node*&);
+        monster_node* move_next();
+        ~monster_node();
       };
