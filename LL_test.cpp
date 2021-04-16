@@ -11,8 +11,12 @@ int main(int argc, char *argv[])
    for(i=1;i<argc;i++) {
     t=new monster_node(atoi(argv[i]),atoi(argv[i+1]),argv[i+2]);
     A.add_node(t);
+    i=i+2;
     }
-   A.show_all();
+    A.atk_all();
+    A.show_all();
+    cout<<"end"<<endl;
+   
     //system("PAUSE");
     return 0;
 }

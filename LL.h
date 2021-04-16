@@ -4,6 +4,7 @@ class LL{
 public:
        void add_node(monster_node*&);
        void show_all();
+       void atk_all();
     
        ~LL();
        LL();

@@ -3,6 +3,8 @@
 #include"LL.h"
 using namespace std;
 #include <string>
+#include <stdlib.h>
+#include <time.h>
 LL::LL(){
        hol=NULL;
        size=0;
@@ -53,3 +55,22 @@ void LL::add_node(monster_node *&A){
        size++;
 
  }
+ void LL::atk_all()
+{
+  int i,b;
+  srand(time(NULL));
+  b=rand()%100;
+  cout<<"Boss Hp is "<<b<<endl;
+  monster_node *t;
+  t=hol;
+  for(i=0;i<size;i++)
+  {
+    t->hp=(rand()%(t->hp+1));
+    t->move_next();
+  }
+  b=b-(b+rand()%100-b);
+  cout<<"current Boss Hp is "<<b<<endl;
+  
+
+}
+

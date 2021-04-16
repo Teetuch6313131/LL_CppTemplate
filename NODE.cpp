@@ -8,16 +8,16 @@ monster_node::monster_node(int x,int y,string n){
       potion=y;
       name=n;
       next=NULL;
-      cout<<"adding monster "<< n<< "hp"<< x<< "potion"<< y<<endl;
+      cout<<"adding monster "<< n<< " hp:"<< x<< " potion:"<< y<<endl;
 }
   monster_node:: ~monster_node(){
-      cout<<"Node "<<name<<" is being deleted"<<endl;
+      cout<<"monster "<<name<<" is being deleted"<<endl;
 }
 monster_node* monster_node::move_next(){
       return next;
 }
 void  monster_node:: show_node(){
-         cout<<"monster "<<name<<"hp:"<<hp<<endl;
+         cout<<"monster "<<name<<" hp:"<<hp <<" potion:"<< potion<<endl;
  }
 void monster_node::insert(monster_node*& x){
      x->next=this;

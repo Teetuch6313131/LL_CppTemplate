@@ -1,5 +1,6 @@
-#include <string>
+using namespace std;
 class monster_node{
+      friend class LL;
       int hp,potion;
       string name;
       monster_node* next;
@@ -9,4 +10,4 @@ public:
         void insert(monster_node*&);
         monster_node* move_next();
         ~monster_node();
-      };
+};
